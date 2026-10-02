@@ -10,9 +10,10 @@ marks = np.array([
 # total marks and avg
 
 total = np.sum(marks,axis=1)
-avg = np.mean(marks,axis=1)
+avg = np.mean(marks,axis=0)
 
 criteria = np.any(marks > 8, axis=1)
 pa_criteria = np.where(criteria)[0]+1
 
-print(f"student{pa_criteria} has 8 in atleast one subject")
+for i in range(len(marks)+1):
+    print(f"subject{i+1}: average_marks{avg[i]}")
