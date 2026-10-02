@@ -11,9 +11,8 @@ marks = np.array([
 
 total = np.sum(marks,axis=1)
 avg = np.mean(marks,axis=1)
-highest = np.argmax(total)
-lowest = np.argmin(total)
 
-print(f"topper: student{highest+1} with total marks {total[highest]}")
-print(f"lowest: student {lowest+1} with lowest marks {total[lowest]}")
+criteria = np.any(marks > 8, axis=1)
+pa_criteria = np.where(criteria)[0]+1
 
+print(f"student{pa_criteria} has 8 in atleast one subject")
